@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script/react.development.js"></script>
+    <script src="script/react-dom.development.js"></script>
+    <script src="script/babel.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="root"></div>
+    <script type="text/babel">
+        // 创建一个React元素
+        // 创建后的React元素无法被修改, 只能创建新的React元素去替换原来的元素。
+        // const button = React.createElement('button', { className: 'btn', onClick: () => alert(1) }, '点我一下')
+        const button = <button className="btn" onClick={() => { alert(123) }} style={{ color: 'red', backgroundColor: "#fff" }}>点我一下</button>
+        // 获取根元素
+        const root = ReactDOM.createRoot(document.querySelector('#root'))
+        // 渲染
+        root.render(button)
+    </script>
+</body>
+
+</html>

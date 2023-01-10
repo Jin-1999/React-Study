@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script/react.development.js"></script>
+    <script src="script/react-dom.development.js"></script>
+    <script src="script/babel.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const dataSource = [
+            {
+                id: 1,
+                name: 'king'
+            },
+            {
+                id: 2,
+                name: 'lucy'
+            },
+            {
+                id: 3,
+                name: 'john'
+            },
+        ]
+        // 获取根元素
+        const root = ReactDOM.createRoot(document.querySelector('#root'))
+        // 渲染
+        root.render(
+            <div>
+                {dataSource.map(v => <li className={v.id} key={v.id}> {v.name}</li>)}
+            </div>
+        )
+    </script>
+</body>
+
+</html>
