@@ -34,13 +34,21 @@ const App = () => {
     ])
 
     const formSubmit = (data) => {
+        if (!data.content) return
         data.id = +new Date()
         setDataSource([...dataSource, data])
     }
 
+    const RecordRemove = ({ id }) => {
+        const index = dataSource.findIndex((item) => item.id == id)
+        dataSource.splice(index, 1)
+        setDataSource([...dataSource])
+    }
+
     return <div className={'wrap'}>
-        <Calendar data={dataSource} />
         <RecordForm onSubmit={formSubmit} />
+        <Calendar data={dataSource} onRemove={RecordRemove} />
+
     </div>
 }
 
