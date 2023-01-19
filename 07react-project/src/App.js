@@ -1,11 +1,9 @@
 import './App.css';
-
+import Meals from './components/Meals/Meals';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p className="text">200</p>
-      </header>
+      <Meals />
     </div>
   );
 }
